@@ -1,0 +1,8 @@
+Step 1: Create store
+Step 2: Create reducer 
+Step 3: Use store to App in index.js
+Step 4: Create Actions
+Step 5: Dispatch data 
+Step 6: Use reduxDevTools
+Step 7: Get data from store
+Step 8: Refix reducer 
