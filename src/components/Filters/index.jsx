@@ -2,7 +2,7 @@ import { Row, Col, Typography, Input, Radio, Select, Tag } from 'antd'
 import { useState } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux'
-import { filterByPriority, filterByStatus, searchTodo } from '../../redux/actions';
+import filterReducer from './filterReducer';
 
 const WrapperStyled = styled(Row)`
     .mb {
@@ -26,17 +26,17 @@ function Filter() {
 
     const handleSearchValue = (e) => {
         setSearchText(e.target.value)
-        dispatch(searchTodo(e.target.value))
+        dispatch(filterReducer.actions.searchTodo(e.target.value))
     }
 
     const handleChangeStatus = (e) => {
         setStatus(e.target.value)
-        dispatch(filterByStatus(e.target.value))
+        dispatch(filterReducer.actions.filterByStatus(e.target.value))
     }
 
     const handleChangePriority = (value) => {
         setPriorities(value)
-        dispatch(filterByPriority(value))
+        dispatch(filterReducer.actions.filterByPriority(value))
     }
 
     return (
